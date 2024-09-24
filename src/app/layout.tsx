@@ -6,8 +6,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Solana Web3 Frontend Boilerplate",
-  description: "Solana Web3 Frontend TypeScript for Mini app",
+  title: "Bitches Ordinal",
+  description: "Bitches NFT Manufacture",
 };
 
 export default function RootLayout({
