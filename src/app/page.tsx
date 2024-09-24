@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from 'react';
-// import Image from "next/image";
 import UserContext from '../contexts/usercontext';
 import Header from '../components/Header/index'
 import NavBar from '../components/NavBar/index'
+import Footer from '../components/Footer/index'
 
 export default function Home() {
   const [backgroundColor, setBackgroundColor] = useState<string>("");
@@ -18,7 +18,7 @@ export default function Home() {
       <UserContext.Provider value={{ backgroundColor, setBackgroundColor, eyes, setEyes, hairs, setHairs, hats, setHats, mouth, setMouth, specialEyes, setSpecialEyes }}>
         <Header />
         <NavBar />
-        {/* <Footer /> */}
+        <Footer />
       </UserContext.Provider>
     </main>
   );
