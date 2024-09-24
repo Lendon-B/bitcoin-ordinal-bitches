@@ -16,18 +16,18 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #15151975;
+  background: #F69E00;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #5f677c;
+  background: #FF4DCE;
   border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #5EBDBE;
 }
 
 :root {
@@ -75,4 +75,11 @@ body {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+
+.ord-connect-font {
+  background-color: #F69E00 !important;
+  background-image: linear-gradient(45deg, #F69E00, #F600F2);
+  color: white !important;
+  border-radius: 50px;
 }
