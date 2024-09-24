@@ -19,7 +19,7 @@ export default function NavBar() {
         <ChangeElement />
       </div>
       <div className='h-[280px] text-[24px] sm:text-[48px] font-extrabold bg-[#F69E00]'>
-        <div className='h-[280px] text-[24px] sm:text-[48px] font-extrabold text-white bg-black rounded-b-full '>
+        <div className='sm:h-[280px] text-[24px] sm:text-[48px] font-extrabold text-white bg-black downrounded '>
           <div className='w-[190px] sm:w-[380px] flex flex-col px-3 py-1 border-white border-[2px] rounded-lg cursor-pointer mx-auto'>DOWNLOAD</div>
         </div>
       </div>
