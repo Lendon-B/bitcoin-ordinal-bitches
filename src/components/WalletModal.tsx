@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useRef } from 'react'
 import UserContext from '@/contexts/usercontext';
 import Image from 'next/image'
 import { WalletList } from '../config/TextData'
+import { GrLinkNext } from "react-icons/gr";
+
 
 export default function WalletModal() {
   const { setOpenModal } = useContext<any>(UserContext);
@@ -31,6 +33,7 @@ export default function WalletModal() {
               <Image src={item.url} alt={item.id} className='w-5 h-5' />
               <div className='text-[16px] text-[#FAD7A1] ml-2'>{item.name}</div>
             </div>
+            <GrLinkNext className='text-[#FAD7A1]' />
           </div>
         )}
 
