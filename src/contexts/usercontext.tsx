@@ -14,6 +14,8 @@ const UserContext = createContext({
   specialEyes: false,
   setSpecialEyes: (value: boolean) => { },
   openModal: false,
-  setOpenModal: (value: boolean) => { }
+  setOpenModal: (value: boolean) => { },
+  address: "",
+  setAddress: (value: string) => { }
 })
 export default UserContext

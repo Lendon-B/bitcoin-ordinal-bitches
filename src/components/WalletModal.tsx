@@ -1,14 +1,33 @@
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import UserContext from '@/contexts/usercontext';
 import Image from 'next/image'
-import { WalletList } from '../config/TextData'
+import { ME, OKX, UNISAT, WalletList, XVERSE } from '../config/TextData'
 import { GrLinkNext } from "react-icons/gr";
+import { connectToUnisatWallet } from '@/utils/wallet/unisat';
+import { connectToXverseWallet } from '@/utils/wallet/xverse';
+import { connectToOkxWallet } from '@/utils/wallet/okx';
+import { connectToMeWallet } from '@/utils/wallet/me';
 
 
 export default function WalletModal() {
-  const { setOpenModal } = useContext<any>(UserContext);
-
+  const { setOpenModal, address, setAddress } = useContext<any>(UserContext);
   const menuDropdown = useRef<HTMLDivElement | null>(null);
+
+  const connectWallet = async (id: string) => {
+    if(id == UNISAT) {
+      let unisatAddress = await connectToUnisatWallet();
+      setAddress(unisatAddress[0].address);
+    } else if(id == XVERSE) {
+      let xverseAddress = await connectToXverseWallet();
+      setAddress(xverseAddress[0].address);
+    } else if(id == OKX) {
+      let okxAddress = await connectToOkxWallet();
+      setAddress(okxAddress[0].address);
+    } else if(id == ME) {
+      let meAddress = await connectToMeWallet();
+      setAddress(meAddress[0].address);
+    }
+  }
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -28,7 +47,7 @@ export default function WalletModal() {
         <div className='text-[24px] font-semibold text-white mb-3'>Connect Wallet</div>
 
         {WalletList.map((item, index) =>
-          <div key={index} onClick={() => console.log(item.id)} className='w-full flex flex-row items-center justify-between px-4 py-2 rounded-lg bg-[#FAD7A1]/10 hover:bg-[#FAD7A1]/50 border-[1px] border-[#FAD7A1] cursor-pointer'>
+          <div key={index} onClick={() => {connectWallet(item.id); setOpenModal(false)}} className='w-full flex flex-row items-center justify-between px-4 py-2 rounded-lg bg-[#FAD7A1]/10 hover:bg-[#FAD7A1]/50 border-[1px] border-[#FAD7A1] cursor-pointer'>
             <div className='flex flex-row items-center justify-start'>
               <Image src={item.url} alt={item.id} className='w-5 h-5' />
               <div className='text-[16px] text-[#FAD7A1] ml-2'>{item.name}</div>

@@ -14,10 +14,11 @@ export default function Home() {
   const [mouth, setMouth] = useState<boolean>(false);
   const [specialEyes, setSpecialEyes] = useState<boolean>(false);
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [address, setAddress] = useState<string>("");
 
   return (
     <main className="App flex min-h-screen flex-col items-center justify-between bg-[#F69E00]">
-      <UserContext.Provider value={{ backgroundColor, setBackgroundColor, eyes, setEyes, hairs, setHairs, hats, setHats, mouth, setMouth, specialEyes, setSpecialEyes, openModal, setOpenModal }}>
+      <UserContext.Provider value={{ backgroundColor, setBackgroundColor, eyes, setEyes, hairs, setHairs, hats, setHats, mouth, setMouth, specialEyes, setSpecialEyes, openModal, setOpenModal, address, setAddress }}>
         <Header />
         <NavBar />
         <Footer />

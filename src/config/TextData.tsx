@@ -16,11 +16,14 @@ export const Text2 = "SHOW ONLY YOUR FACE BITCH"
 export const Text3 = "ORDINAL NEVER BEEN SO MUCH FUN "
 export const Text4 = "JOIN US OR GET THE FUCK OUT OF THIS SPACE"
 
+export const UNISAT = "unisat"
+export const XVERSE = "xverse"
+export const OKX = "okx"
+export const ME = "me"
+
 export const WalletList = [
-  { id: "unisat", name: "UniSat", url: UnisatIcon },
-  { id: "xverse", name: "Xverse", url: XverseIcon },
-  { id: "okx", name: "OKX", url: OKXIcon },
-  { id: "me", name: "Magic Eden", url: MeIcon },
+  { id: UNISAT, name: "UniSat", url: UnisatIcon },
+  { id: XVERSE, name: "Xverse", url: XverseIcon },
+  { id: OKX, name: "OKX", url: OKXIcon },
+  { id: ME, name: "Magic Eden", url: MeIcon },
 ]
-
-

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Logo from "../../../public/assest/images/bitches logo.png"
 
 export default function Header() {
-  const { setOpenModal } = useContext(UserContext);
+  const { setOpenModal, address } = useContext(UserContext);
   return (
     <div className='w-full h-[90px] flex flex-col bg-black border-b-[2px] border-b-[#411A5B]'>
       <div className='container'>
@@ -14,7 +14,7 @@ export default function Header() {
             <Image src={Logo} alt="Logo" className='max-w-[100px] sm:max-w-[250px] h-[50] flex flex-col' />
           </a>
           <div onClick={() => setOpenModal(true)} className='flex flex-col w-[120px] h-[32px] sm:w-[250px] sm:h-[50px] items-center justify-center rounded-full ord-connect-font text-white font-bold text-[14px] sm:text-xl cursor-pointer'>
-            <p>Connect Wallet</p>
+            {address ? <p className='w-[80%] truncate'>{address}</p> : <p>Connect Wallet</p>}
           </div>
         </div>
       </div>
