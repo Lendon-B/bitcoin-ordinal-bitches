@@ -16,6 +16,9 @@ const UserContext = createContext({
   openModal: false,
   setOpenModal: (value: boolean) => { },
   address: "",
-  setAddress: (value: string) => { }
+  setAddress: (value: string) => { },
+  inscriptions: [""],
+  setInscriptions: (value: Array<string>) => { },
 })
+
 export default UserContext

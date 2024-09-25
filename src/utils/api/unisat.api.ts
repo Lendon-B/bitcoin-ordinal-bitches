@@ -1,34 +1,34 @@
 import axios from "axios";
 import dotenv from "dotenv";
+import { OPENAPI_UNISAT_TOKEN } from '../../config/api'
 
 // Configuration from .env file
 dotenv.config();
 
 // Getting Unisat API array from .env file
-const unisat_api = process.env.OPENAPI_UNISAT_TOKEN;
 
 
 // Get inscriptions from address using Unisat api
 
 export const getInscriptions = async (address: string) => {
+    try {
 
-    const url = `https://open-api.unisat.io/v1/indexer/address/${address}/inscription-data`;
+        const url = `https://open-api.unisat.io/v1/indexer/address/${address}/inscription-data`;
 
-    console.log(url)
+        console.log(url)
 
-    const config = {
-        headers: {
-            Authorization: `Bearer ${unisat_api as string}`,
-        },
-    };
+        const config = {
+            headers: {
+                Authorization: `Bearer ${OPENAPI_UNISAT_TOKEN}`,
+            },
+        };
 
-    let res = await axios.get(url, config);
+        let res = await axios.get(url, config);
 
-    console.log(res)
-    
-    if (res.data.code === -1) throw "Invalid Address";
+        if (res.data.code === -1) return [];
 
-    let inscriptions = res.data.data;
-
-    return inscriptions;
+        return res.data.data.inscription;
+    } catch (e) {
+        console.log(e);
+    }
 };
