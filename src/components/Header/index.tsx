@@ -1,10 +1,11 @@
+"use client"
 import React, { useContext } from 'react'
 import UserContext from '@/contexts/usercontext';
 import Image from "next/image";
 import Logo from "../../../public/assest/images/bitches logo.png"
 
-export default function index() {
-  const { setOpenModal } = useContext<any>(UserContext);
+export default function Header() {
+  const { setOpenModal } = useContext(UserContext);
   return (
     <div className='w-full h-[90px] flex flex-col bg-black border-b-[2px] border-b-[#411A5B]'>
       <div className='container'>
