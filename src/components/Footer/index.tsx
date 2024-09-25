@@ -2,7 +2,7 @@ import React from 'react'
 import { BsTwitterX, BsDiscord, BsTelegram } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 
-export default function index() {
+export default function Footer() {
   return (
     <div className='w-full h-[90px] flex flex-col bg-[#0D1121]'>
       <div className='container'>
