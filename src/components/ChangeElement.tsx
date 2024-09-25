@@ -65,24 +65,24 @@ export default function ChangeElement() {
           </div>
           <Image src={NFTImg} alt="CanvarImage" className='w-[250px] h-[250px] rounded-full flex flex-col items-center justify-center border-2 border-white' />
           <div className='w-[200px] flex flex-col border-[2px] border-[#FF4DCE] text-[20px] font-medium'>
-            <div onClick={() => setEyes(!eyes)} className='w-full justify-start items-center flex flex-row gap-2 px-[10px] py-2 border-b-[2px] border-b-[#FF4DCE] cursor-pointer hover:bg-[#FF4DCE]/20'>
-              <input type='checkbox' checked={eyes} className='w-[20px] h-[20px] bg-black outline-[#FF4DCE]' />
+            <div  className='w-full justify-start items-center flex flex-row gap-2 px-[10px] py-2 border-b-[2px] border-b-[#FF4DCE] cursor-pointer hover:bg-[#FF4DCE]/20'>
+              <input type='checkbox' checked={eyes} onChange={() => setEyes(!eyes)} className='w-[20px] h-[20px] bg-black outline-[#FF4DCE]' />
               <p>EYES</p>
             </div>
-            <div onClick={() => setHairs(!hairs)} className='w-full justify-start items-center flex flex-row gap-2 px-[10px] py-2 border-b-[2px] border-b-[#FF4DCE] cursor-pointer hover:bg-[#FF4DCE]/20'>
-              <input type='checkbox' checked={hairs} className='w-[20px] h-[20px] bg-black outline-[#FF4DCE] cursor-pointer hover:bg-[#FF4DCE]/20' />
+            <div  className='w-full justify-start items-center flex flex-row gap-2 px-[10px] py-2 border-b-[2px] border-b-[#FF4DCE] cursor-pointer hover:bg-[#FF4DCE]/20'>
+              <input type='checkbox' checked={hairs} onChange={() => setHairs(!hairs)} className='w-[20px] h-[20px] bg-black outline-[#FF4DCE] cursor-pointer hover:bg-[#FF4DCE]/20' />
               <p>HAIRS</p>
             </div>
-            <div onClick={() => setHats(!hats)} className='w-full justify-start items-center flex flex-row gap-2 px-[10px] py-2 border-b-[2px] border-b-[#FF4DCE] cursor-pointer hover:bg-[#FF4DCE]/20'>
-              <input type='checkbox' checked={hats} className='w-[20px] h-[20px] bg-black outline-[#FF4DCE]' />
+            <div className='w-full justify-start items-center flex flex-row gap-2 px-[10px] py-2 border-b-[2px] border-b-[#FF4DCE] cursor-pointer hover:bg-[#FF4DCE]/20'>
+              <input type='checkbox' checked={hats} onChange={() => setHats(!hats)} className='w-[20px] h-[20px] bg-black outline-[#FF4DCE]' />
               <p>HATS</p>
             </div>
-            <div onClick={() => setMouth(!mouth)} className='w-full justify-start items-center flex flex-row gap-2 px-[10px] py-2 border-b-[2px] border-b-[#FF4DCE] cursor-pointer hover:bg-[#FF4DCE]/20'>
-              <input type='checkbox' checked={mouth} className='w-[20px] h-[20px] bg-black outline-[#FF4DCE]' />
+            <div className='w-full justify-start items-center flex flex-row gap-2 px-[10px] py-2 border-b-[2px] border-b-[#FF4DCE] cursor-pointer hover:bg-[#FF4DCE]/20'>
+              <input type='checkbox' checked={mouth} onChange={() => setMouth(!mouth)} className='w-[20px] h-[20px] bg-black outline-[#FF4DCE]' />
               <p>MOUTH</p>
             </div>
-            <div onClick={() => setSpecialEyes(!specialEyes)} className='w-full justify-start items-center flex flex-row gap-2 px-[10px] py-2 cursor-pointer hover:bg-[#FF4DCE]/20'>
-              <input type='checkbox' checked={specialEyes} className='w-[20px] h-[20px] bg-black outline-[#FF4DCE]' />
+            <div className='w-full justify-start items-center flex flex-row gap-2 px-[10px] py-2 cursor-pointer hover:bg-[#FF4DCE]/20'>
+              <input type='checkbox' checked={specialEyes} onChange={() => setSpecialEyes(!specialEyes)} className='w-[20px] h-[20px] bg-black outline-[#FF4DCE]' />
               <p>SPECIAL EYES</p>
             </div>
           </div>
