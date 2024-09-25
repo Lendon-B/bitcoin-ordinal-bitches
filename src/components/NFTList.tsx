@@ -7,7 +7,7 @@ import collectionData from '../config/collection.json';
 export default function NFTList() {
 
   const { address, inscriptions, setInscriptions } = useContext<any>(UserContext);
-  const [walletInscriptions, setWalletInscriptions] = useState<any[]>([]);
+  const [walletInscriptions, setWalletInscriptions] = useState<string[]>([]);
 
   const handleGetInscriptions = async (address: string) => {
     const newInscriptions = await getInscriptions(address)
@@ -25,15 +25,17 @@ export default function NFTList() {
 
 
   useEffect((() => {
-    let inscriptionIdArray = collectionData.map((item, index) => {
-      return item.id;
-    });
-    const filteredIds = walletInscriptions.filter(item => inscriptionIdArray.includes(item));
+    let tempInscriptions: Array<any> = [];
 
-    setInscriptions(filteredIds)
+    collectionData.map((item, index) => {
+      if (walletInscriptions.findIndex((value) => value == item.id) >= 0) {
+        tempInscriptions.push(item)
+      }
+    });
+    setInscriptions(tempInscriptions)
   }), [walletInscriptions])
 
-  
+
   ///////////////////////////////////////////////////////////////
   // Display ordinal collection of wallet
   ///////////////////////////////////////////////////////////////

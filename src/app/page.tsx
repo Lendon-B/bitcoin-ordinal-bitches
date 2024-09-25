@@ -15,7 +15,7 @@ export default function Home() {
   const [specialEyes, setSpecialEyes] = useState<boolean>(false);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [address, setAddress] = useState<string>("");
-  const [inscriptions, setInscriptions] = useState<Array<string>>([]);
+  const [inscriptions, setInscriptions] = useState<Array<any>>([]);
 
   return (
     <main className="App flex min-h-screen flex-col items-center justify-between bg-[#F69E00]">

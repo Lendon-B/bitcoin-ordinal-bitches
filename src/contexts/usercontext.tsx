@@ -18,7 +18,7 @@ const UserContext = createContext({
   address: "",
   setAddress: (value: string) => { },
   inscriptions: [""],
-  setInscriptions: (value: Array<string>) => { },
+  setInscriptions: (value: Array<any>) => { },
 })
 
 export default UserContext

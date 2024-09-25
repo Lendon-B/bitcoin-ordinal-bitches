@@ -15,19 +15,20 @@ export const getInscriptions = async (address: string) => {
 
         const url = `https://open-api.unisat.io/v1/indexer/address/${address}/inscription-data`;
 
-        console.log(url)
-
         const config = {
             headers: {
                 Authorization: `Bearer ${OPENAPI_UNISAT_TOKEN}`,
             },
         };
 
-        let res = await axios.get(url, config);
+        if (address == "" || address == undefined) {
+        } else {
+            let res = await axios.get(url, config);
 
-        if (res.data.code === -1) return [];
+            if (res.data.code === -1) return [];
 
-        return res.data.data.inscription;
+            return res.data.data.inscription;
+        }
     } catch (e) {
         console.log(e);
     }
