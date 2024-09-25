@@ -42,7 +42,7 @@ export default function WalletModal() {
   }, [menuDropdown]);
 
   return (
-    <div className='w-full h-screen absolute flex flex-col top-0 left-0 items-center justify-center gap-2 bg-black/95 z-50'>
+    <div className='w-full h-screen absolute flex flex-col top-0 left-0 items-center justify-center gap-2 bg-black/95 z-40'>
       <div ref={menuDropdown} className='w-[280px] xs:w-[400px] flex flex-col border-[1px] border-[#232428] bg-[#121315]/20 shadow-lg shadow-[#FAD7A1] justify-center items-center py-10 px-6 gap-4 mx-auto rounded-lg'>
         <div className='text-[24px] font-semibold text-white mb-3'>Connect Wallet</div>
 
