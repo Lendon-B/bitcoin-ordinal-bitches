@@ -3,10 +3,10 @@ import UserContext from '@/contexts/usercontext';
 import Image from 'next/image'
 import { ME, OKX, UNISAT, WalletList, XVERSE } from '../config/TextData'
 import { GrLinkNext } from "react-icons/gr";
-import { connectToUnisatWallet } from '@/utils/wallet/unisat';
-import { connectToXverseWallet } from '@/utils/wallet/xverse';
-import { connectToOkxWallet } from '@/utils/wallet/okx';
-import { connectToMeWallet } from '@/utils/wallet/me';
+import { connectToUnisatWallet } from '@/utils/wallet/unisat.wallet';
+import { connectToXverseWallet } from '@/utils/wallet/xverse.wallet';
+import { connectToOkxWallet } from '@/utils/wallet/okx.wallet';
+import { connectToMeWallet } from '@/utils/wallet/me.wallet';
 
 
 export default function WalletModal() {

@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import Image from 'next/image'
 import { NFTListData } from '../config/TextData'
+import UserContext from '@/contexts/usercontext';
+import { getInscriptions } from '@/utils/api/unisat.api';
 
 export default function NFTList() {
+
+  const { address } = useContext<any>(UserContext);
+
+  useEffect(() => {
+    console.log("address => ", address)
+    getInscriptions(address);
+
+  }, [address]);
 
   return (
     <div className='flex flex-wrap items-center justify-center gap-2 bg-black'>
