@@ -6,8 +6,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bitches Ordinal",
-  description: "Bitches NFT Manufacture",
+  title: "Photo Booth",
+  description: "Extract portrait, customize your pfp",
 };
 
 export default function RootLayout({
